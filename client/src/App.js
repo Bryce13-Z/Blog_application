@@ -2,22 +2,25 @@ import React from 'react'
 import {Route, Routes} from 'react-router-dom'
 
 import { Navbar, Footer} from './components/index'
-import { Home } from './pages/index'
+import { Home, NewArticle, Setting, Details, UserInfo } from './pages/index'
+
 import './styles/App.css'
 
 const App = () => {
 
   return (
     <div className="body">
-        <Navbar className="NavBar"/>
+        <Navbar/>
         <div className="content">
             <Routes>
                 <Route path="/" element={<Home/>} />
-
+                <Route path="/create-article" element={<NewArticle/>}/>
+                <Route path="/setting" element={<Setting/>} />
+                <Route path="/userInfo" element={<UserInfo/>} />
             </Routes>
         </div>
-
-        <Footer className="Footer"/>
+        <hr/>
+        <Footer/>
     </div>
   )
 }

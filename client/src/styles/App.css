@@ -6,12 +6,21 @@
   width: 100vw;
   margin: 0;
 }
-.body .NavBar {
-  min-height: 300px;
-}
 .body .content {
-  min-height: 700px;
+  margin-top: 60px;
+  min-height: 900px;
+  width: 80%;
+}
+.body hr {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 .body .Footer {
-  min-height: 250px;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: #cde2f3;
+  color: white;
 }/*# sourceMappingURL=App.css.map */

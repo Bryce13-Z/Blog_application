@@ -7,15 +7,26 @@
 
     margin: 0;
 
-    .NavBar{
-        min-height: 300px;
-    }
 
     .content {
-        min-height: 700px;
+        margin-top: 60px;
+        min-height: 900px;
+        width: 80%;
+    }
+
+    hr {
+        width: 100%;
+        padding:0;
+        margin: 0;
     }
     
     .Footer {
-        min-height: 250px;
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+
+        background-color: rgba($color: #cde2f3, $alpha: 1.0);
+        color: white;
     }
 }

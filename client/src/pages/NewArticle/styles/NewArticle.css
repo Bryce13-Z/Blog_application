@@ -1,0 +1,9 @@
+.outerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outerContainer .innerContainer {
+  width: 80%;
+  min-height: 500px;
+}/*# sourceMappingURL=NewArticle.css.map */

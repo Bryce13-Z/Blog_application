@@ -1,0 +1,10 @@
+.outerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .innerContainer {
+        width: 80%;
+        min-height: 500px;
+    }
+}

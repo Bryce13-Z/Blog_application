@@ -5,11 +5,19 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 
+// import routes from routes folder
+import userRouter from './routes/user.js'
+
 const app = express();
 
+// body-parser and cors set up
 app.use(bodyParser.json({limit: '30mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '30mb', extended: true}));
 app.use(cors());
+
+
+// main routes
+//app.use("/user", userRouter);
 
 
 

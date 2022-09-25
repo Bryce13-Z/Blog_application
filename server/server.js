@@ -7,6 +7,8 @@ dotenv.config();
 
 // import routes from routes folder
 import userRouter from './routes/user.js'
+import postsRouter from './routes/posts.js'
+import postCommentRouter from './routes/postComment.js'
 
 const app = express();
 
@@ -17,7 +19,10 @@ app.use(cors());
 
 
 // main routes
-//app.use("/user", userRouter);
+app.use("/user", userRouter);
+app.use("/posts", postsRouter);
+app.use("/postComment", postCommentRouter);
+
 
 
 

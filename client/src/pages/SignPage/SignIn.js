@@ -3,6 +3,9 @@ import { useState } from 'react'
 import { Container , Box, Card, Grid, TextField, Button } from '@mui/material'
 import PasswordInput  from './components/PasswordInput'
 
+import {useDispatch} from 'react-redux'
+import { signin } from '../../actions/user'
+
 // container css style
 const container_style = {display: 'flex', 
   justifyContent: 'center', 
@@ -19,8 +22,17 @@ const SignIn = () => {
     email: '',
     password: ''
   })
+  const dispatch = useDispatch();
+  
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // validation formData
+    
+    // deliver formData to actions 
+    dispatch(signin(formData));
 
+  }
 
   return (
     <Container maxwidth="lg" 
@@ -33,7 +45,7 @@ const SignIn = () => {
               id="filled-size-normal"
               defaultValue="Email"
               variant="filled"
-              value=""
+              value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
             />
           </Grid>
@@ -41,7 +53,7 @@ const SignIn = () => {
             <PasswordInput setFormData={setFormData} formData={formData}/>
           </Grid>
           <Grid xs={12}>
-            <Button>submit</Button>
+            <Button onClick={handleSubmit}>submit</Button>
           </Grid>
         </Grid>
       </Card>

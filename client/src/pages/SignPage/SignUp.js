@@ -4,6 +4,9 @@ import { Container , Box, Card, Grid, TextField, Button } from '@mui/material'
 import PasswordInput  from './components/PasswordInput'
 import ComfirmInput from './components/ComfirmInput'
 
+import { useDispatch } from 'react-redux'
+import { signup} from '../../actions/user'
+
 // container css style
 const container_style = {display: 'flex', 
   justifyContent: 'center', 
@@ -20,9 +23,20 @@ const SignUp = () => {
     name: '',
     email: '',
     password: '',
-    comfirmedPassword: ''
+    comfirmedPassword: '',
   })
 
+  const dispatch = useDispatch();
+  
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // validation formData
+    
+    // deliver formData to actions 
+    dispatch(signup(formData));
+
+  }
 
 
   return (
@@ -57,7 +71,7 @@ const SignUp = () => {
             <ComfirmInput setFormData={setFormData} formData={formData}/>
           </Grid>
           <Grid xs={12}>
-            <Button>submit</Button>
+            <Button onClick={handleSubmit}>submit</Button>
           </Grid>
         </Grid>
       </Card>

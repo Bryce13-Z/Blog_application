@@ -4,7 +4,7 @@ const API = axios.create({ baseRUL: 'http://localhost:8000'})
 
 // if local Storage has profile object, we put it into request's header,
 //back end can get the token by fetching request' header
-API.interceptors.request.use(() => {
+API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {
         req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile').token)}`;
     }
